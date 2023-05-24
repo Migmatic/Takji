@@ -2,16 +2,21 @@
 body {
     font-family: 'Inter', sans-serif;
     padding-top: 92px;
-    height: 2000px;
     margin: 0;
+    color: #101828;
+    height: 10000px;
 }
 
 body a {
     text-decoration: none;
 }
 
+body p {
+    margin: 0;
+}
+
 /**************** HEADING ****************/
-h2{
+h2 {
     font-size: 60px;
     font-weight: 600;
     line-height: 72px;
@@ -19,15 +24,116 @@ h2{
     text-align: center;
     margin: 16px 0 24px 0;
 }
-/**************** COMPONENTS ****************/
-.button-one{
-    color: white;
-    background: linear-gradient(0deg, #7F56D9, #7F56D9), linear-gradient(90deg, #7F56D9 0%, #9E77ED 100%);
-    border-radius: 8px;
+
+h3 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 0 -24px 0;
+}
+
+h5 {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    padding: 10px 18px;
+    text-align: center;
+    margin: 0 0 12px 0;
+    color: #6941C6;
+}
+
+.legend {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    color: #667085;
+}
+
+/**************** COMPONENTS ****************/
+
+.button-fill, .button-empty, .button-mid {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 9px 17px;
+    box-sizing: border-box;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    border-radius: 8px;
+}
+
+.button-fill::after, .button-empty::after, .button-mid::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+@keyframes btn-hover {
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.button-empty:hover::after, .button-mid:hover::after {
+    animation: btn-hover 0.4s;
+}
+
+.button-fill {
+    color: white;
+    background: linear-gradient(90deg, #7F56D9, transparent) #9E77ED;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+    border: 1px solid #7F56D9;
+    width: fit-content;
+}
+
+.button-fill:hover {
+    background: linear-gradient(90deg, #6941C6, transparent) #7F56D9;
+}
+
+.button-empty {
+    color: #667085;
+}
+
+.button-empty:hover {
+    color: #475467;
+}
+
+.button-empty:hover::after {
+    background: #F2F4F7;
+    box-shadow: 0 1px 2px 0 #1018280D;
+}
+
+.button-mid {
+    color: #9E77ED;
+}
+
+.button-mid::after {
+    background: #F4EBFF;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.button-mid:hover {
+    color: #7F56D9;
+}
+
+.button-mid:hover::after {
+    background: #E9D7FE;
 }
 
 /**************** NAV ****************/
@@ -73,40 +179,10 @@ nav .nav-left .menu li {
     text-align: center;
 }
 
-nav .nav-left .menu a {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    color: #667085;
-    padding: 10px 18px;
-    height: fit-content;
-    border-radius: 8px;
-    transition: all 0.25s ease-in-out;
-}
-
-nav .nav-left .menu a:hover {
-    color: #9E77ED;
-    background: #F4EBFF;
-    box-shadow: 0px 1px 2px 0px #1018280D;
-}
-
-nav .nav-left .menu li:first-child a {
-    color: #9E77ED;
-    background: #F4EBFF;
-    box-shadow: 0px 1px 2px 0px #1018280D;
-}
-
 nav .nav-right {
     text-align: center;
     display: flex;
-}
-
-nav .nav-right .sign-in {
-    color: #667085;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    padding: 10px 18px;
+    gap: 8px;
 }
 
 /**************** SECTION ONE ****************/
@@ -118,38 +194,50 @@ nav .nav-right .sign-in {
 }
 
 .section-one .new {
-    width:280px ;
+    width: 280px;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
     color: #6941C6;
     background: #F4EBFF;
     border-radius: 16px;
-    padding: 4px;
+    padding: 4px 16px 4px 4px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    gap: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    position: relative;
 }
 
-.section-one .new span:first-child{
+
+.section-one .new span:first-child {
     border-radius: 16px;
     padding: 2px 10px;
     background: white;
+    margin-right: 12px;
 }
 
-.section-one .catchline{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    text-align: center;
+.section-one .new svg {
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+    position: absolute;
+    left: 269px;
+}
+
+.section-one .new:hover {
+    width: 294px;
+}
+
+.section-one .new:hover svg {
+    opacity: 1;
 }
 
 /**************** CAROUSEL ****************/
 
-.caroussel{
+.caroussel {
     margin: 0 auto;
-    width:90% ;
+    width: 90%;
     overflow: hidden;
 }
 
@@ -157,28 +245,194 @@ nav .nav-right .sign-in {
     width: 100%;
     margin: 64px 0 170px 0;
 }
-.swiper-slide{
+
+.swiper-slide {
     width: 50vw;
     height: auto;
 }
 
-.swiper-slide img{
+.swiper-slide img {
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 25px;
-    box-shadow: 0px 32px 64px -12px #10182824;
+    box-shadow: 0 32px 64px -12px #10182824;
 }
 
-.swiper-slide-prev,.swiper-slide-next{
+.swiper-slide-prev, .swiper-slide-next {
     opacity: 0.2;
 }
 
-.swiper-pagination{
-    bottom: -44px!important;
+.swiper-pagination {
+    bottom: -44px !important;
 }
 
-.swiper-pagination span{
-    background:#6941C6!important;
+.swiper-pagination span {
+    background: #6941C6 !important;
 }
+
+/**************** SOCIAL PROOF ****************/
+
+.social-proof {
+    width: 75%;
+    margin: 0 auto;
+    padding: 90px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+.social-proof p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+}
+
+.social-proof .proof-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 40px 80px;
+}
+
+.social-proof .proof-wrapper img {
+    transition: all 0.25s ease-in-out;
+}
+
+.social-proof .proof-wrapper img:hover {
+    transform: scale(1.05);
+}
+
+.social-proof::after {
+    width: 90vw;
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #EAECF0;
+    bottom: 0;
+}
+
+/**************** WORK WORK WORK ****************/
+
+.rihana {
+    width: 80%;
+    margin: 0 auto;
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rihana .workflow {
+    margin-top: 64px;
+    width: calc(300px + 40%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 64px 128px;
+    justify-content: center;
+}
+
+.rihana .workflow-single {
+    width: 281px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rihana .workflow-svg {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4EBFF;
+    box-sizing: border-box;
+    border-radius: 28px;
+    border: 8px solid #F9F5FF;
+}
+
+.rihana .workflow-title {
+    margin: 16px 0 8px 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+}
+
+.rihana .workflow-legend {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #667085;
+}
+
+/**************** MORE ****************/
+
+.more {
+    padding: 96px 0;
+    position: relative;
+}
+
+.more::after {
+    width: 80vw;
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #EAECF0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wrapper-more {
+    width: 90%;
+    margin: 0 auto;
+    background: #F9FAFB;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 0;
+}
+
+.more .avatar img:first-child {
+    transform: translateX(16px);
+}
+.more .avatar img:last-child {
+    transform: translateX(-16px);
+}
+
+.more .avatar img:nth-child(2) {
+    position: relative;
+    z-index: 2;
+}
+
+.more p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    color: #667085;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
