@@ -51,6 +51,13 @@ h5 {
     color: #6941C6;
 }
 
+h6 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+}
+
 .legend {
     font-size: 20px;
     font-weight: 400;
@@ -60,7 +67,6 @@ h5 {
 }
 
 /**************** COMPONENTS ****************/
-
 .button-fill, .button-empty, .button-mid {
     font-size: 16px;
     font-weight: 600;
@@ -135,6 +141,41 @@ h5 {
 .button-mid:hover::after {
     background: #E9D7FE;
 }
+
+.tag{
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 8px;
+    border-radius: 16px;
+    width:fit-content;
+}
+
+.aventure{
+    color: #3538CD;
+    background: #EEF4FF;
+}
+
+.action{
+    color: #6941C6;
+    background: #F9F5FF;
+}
+
+.art_martiaux{
+    color: #C11574;
+    background: #FDF2FA;
+}
+
+.donjon{
+    color: #C4320A;
+    background: #FFF6ED;
+}
+.fantaisie{
+    color: #026AA2;
+    background: #F0F9FF;
+}
+
 
 /**************** NAV ****************/
 header {

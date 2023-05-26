@@ -198,14 +198,22 @@
 
     <p class="legend">Vous trouverez la liste des différents livres que vous pouvez ajouter dans votre bibliothèque.</p>
 
-    <div class="wrapper-library">
-        <div class="single-library">
+    <ul class="wrapper-library">
 
-        </div>
-    </div>
+
+
+    </ul>
 <section class="library">
 
 
 </section>
 </body>
 </html>
+
+library.appendChild(
+Object.assign(
+document.createElement('li'),
+{ innerHTML : single ,
+}
+)
+)
