@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         single.appendChild(tags_container)
 
         library.appendChild(single)
-
     })
 })
 
