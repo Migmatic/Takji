@@ -29,8 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const converter = converterTags()
     const library = document.getElementsByClassName("wrapper-library")[0];
     books.forEach(book => {
-        const single = document.createElement('li')
-        single.appendChild(
+
+        const single_library = Object.assign(
+            document.createElement('a'),
+            {className: 'single-library',
+            href:'#'}
+        )
+
+        single_library.appendChild(
             Object.assign(
                 document.createElement('div'),
                 {className: 'library-image'}
@@ -44,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             )
         )
-        single.appendChild(
-            Object.assign(
-                document.createElement('h6'),
-                {innerHTML: book.title}
-            )
+
+        let single_title = Object.assign(
+            document.createElement('h6'),
+            {innerHTML: book.title}
         )
+
 
         let tags_container = Object.assign(
             document.createElement('div'),
@@ -68,7 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
             )
         })
 
-        single.appendChild(tags_container)
+        let single_bottom = Object.assign(
+            document.createElement('div'),
+            {className: 'single-bottom'}
+        )
+        single_bottom.appendChild(single_title)
+        single_bottom.appendChild(tags_container)
+
+        single_library.appendChild(single_bottom)
+
+        const single = document.createElement('li')
+        single.appendChild(single_library)
 
         library.appendChild(single)
     })
