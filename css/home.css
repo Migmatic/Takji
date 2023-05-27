@@ -489,6 +489,7 @@ nav .nav-right {
     justify-content: center;
     gap: 28px 32px;
     list-style: none;
+    width: calc(300px + 60%);
 }
 
 .wrapper-library .single-library {
