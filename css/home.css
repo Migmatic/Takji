@@ -81,6 +81,9 @@ h6 {
     transition: all 0.4s ease-in-out;
     position: relative;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
 
 .button-fill::after, .button-empty::after, .button-mid::after {
@@ -533,6 +536,90 @@ nav .nav-right {
 .wrapper-library .single-library .tags-library {
     display: flex;
     gap: 5px;
+}
+
+/**************** FAQ ****************/
+
+.faq {
+    width: 55%;
+    margin: 0 auto;
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper-question{
+    margin-top: 64px;
+    width: 100%;
+}
+
+.single-question .question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor:pointer;
+}
+
+.single-question .question:hover svg{
+    transform: scale(1.1);
+}
+
+.single-question .question svg{
+    transition: all 0.5s ease-in-out;
+}
+
+.single-question .answer{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: dashed 1px #EAECF0;
+    padding: 10px 20px 10px 20px;
+}
+
+.single-question:first-child .question{
+    padding-bottom: 32px;
+    border-bottom: solid 1px #EAECF0;
+}
+
+.single-question:nth-child(2) .question{
+    padding: 18px 0 18px 0;
+    border-bottom: solid 1px #EAECF0;
+}
+
+.single-question:last-child .question{
+    padding-top: 32px;
+}
+
+.single-question .question p{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+}
+
+/**************** NEWSLETTER ****************/
+
+.newsletter {
+    background: #F9FAFB;
+    margin: 0 auto;
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter form{
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+}
+
+.newsletter input {
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    padding: 15px 15px 15px 40px;
 }
 
 

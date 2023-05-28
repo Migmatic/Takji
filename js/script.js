@@ -88,6 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         library.appendChild(single)
     })
+
+    const buttons = document.getElementsByClassName("question");
+    for (button of buttons) {
+        button.addEventListener('click', function() {
+            const state = this.parentElement.children[1].style.display
+            if (state ==="none"){
+                this.parentElement.children[1].style.display = "flex"
+            }
+            else{
+                this.parentElement.children[1].style.display = "none"
+            }
+        });
+    }
+
+
+
 })
 
 
