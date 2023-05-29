@@ -14,24 +14,46 @@ body p {
 }
 
 /**************** HEADING ****************/
-h2 {
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 72px;
-  letter-spacing: -0.02em;
-  text-align: center;
-  margin: 16px 0 24px 0;
+@media (max-width: 680px) {
+  h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 16px 0 24px 0;
+  }
 }
-
-h3 {
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 44px;
-  letter-spacing: -0.02em;
-  text-align: center;
-  margin: 0 0 20px 0;
+@media (min-width: 681px) {
+  h2 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 72px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 16px 0 24px 0;
+  }
 }
-
+@media (max-width: 680px) {
+  h3 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+}
+@media (min-width: 681px) {
+  h3 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+}
 h4 {
   font-size: 20px;
   font-weight: 500;
@@ -236,6 +258,60 @@ nav .nav-right {
   display: flex;
   gap: 8px;
 }
+@media (max-width: 700px) {
+  nav .nav-left .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    top:60px;
+    right:0;
+    transform: translateY(-150%);
+    z-index: -1;
+    transition: 0.6s;
+  }
+  nav .navbar-toggler {
+    display: grid !important;
+    position:relative;
+
+  }
+  nav .navbar-toggler .bar {
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background: #475467;
+    border-radius: 10%;
+    transition: 0.4s;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked ~ nav .nav-left .menu {
+    transform: translateY(0);
+  }
+
+  input:checked ~ nav .navbar-toggler {
+    margin-top: 35px;
+  }
+
+  input:checked ~ nav .navbar-toggler .bar:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg);
+  }
+
+  input:checked ~ nav .navbar-toggler .bar:nth-child(2) {
+    display: none;
+  }
+
+  input:checked ~ nav .navbar-toggler .bar:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+}
+
+
 
 /**************** SECTION ONE ****************/
 .section-one {
@@ -343,13 +419,28 @@ nav .nav-right {
   text-align: center;
 }
 
-.social-proof .proof-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 40px 80px;
+@media (max-width: 680px) {
+  .social-proof .proof-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+  }
+}
+
+/* Smartphones en mode paysage et au-delà (à partir de 376px) */
+@media (min-width: 681px) {
+  .social-proof .proof-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    gap: 40px 80px;
+  }
 }
 
 .social-proof .proof-wrapper img {
@@ -542,16 +633,26 @@ nav .nav-right {
 }
 
 /**************** FAQ ****************/
-
-.faq {
-  width: 55%;
-  margin: 0 auto;
-  padding: 96px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (max-width: 375px) {
+  .faq {
+    width: 80%;
+    margin: 0 auto;
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
+@media (min-width: 376px) {
+  .faq {
+    width: 55%;
+    margin: 0 auto;
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .wrapper-question {
   margin-top: 64px;
   width: 100%;
@@ -611,11 +712,27 @@ nav .nav-right {
   flex-direction: column;
   align-items: center;
 }
-
-.newsletter form {
-  margin-top: 40px;
-  display: flex;
-  gap: 16px;
+@media (min-width: 376px) {
+  .newsletter form {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .newsletter form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .button-fill {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .newsletter input {
@@ -623,6 +740,19 @@ nav .nav-right {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   padding: 15px 15px 15px 40px;
+}
+.input-container {
+  position: relative;
+}
+.input-container i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #667085;
+}
+.input-container input {
+  padding-left: 30px;
 }
 /**************** Footer ****************/
 
@@ -634,21 +764,55 @@ nav .nav-right {
   display: flex;
   margin-top: 100px;
 }
-.footer--right {
-  width: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 900px) {
+  .top--footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
-.footer--left p {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0em;
-  text-align: left;
-  width: 30%;
+@media (max-width: 900px) {
+  .footer--left p {
+    width: 100%;
+    text-align: center;
+  }
+  .footer--left h1 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 880px) {
+  .footer--list ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 900px) {
+  .footer--right {
+    display: none;
+  }
+}
+@media (min-width: 901px) {
+  .footer--right {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 901px) {
+  .footer--left p {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 30%;
+  }
 }
 .btn--footer {
   display: flex;
@@ -677,6 +841,8 @@ nav .nav-right {
 }
 .footer--left {
   width: 85%;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer--list ul {
@@ -745,7 +911,7 @@ nav .nav-right {
 }
 .mentions--headline {
   display: flex;
-  margin-top:100px;
+  margin-top: 100px;
   flex-direction: column;
   gap: 24px;
   font-family: Inter;

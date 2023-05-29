@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="css/home.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/502fd7a6d1.js" crossorigin="anonymous"></script>    <link href="css/home.css" rel="stylesheet"/>
     <script src="js/script.js"></script>
 
 </head>
 <body>
 <header>
+    <input type="checkbox" id="toggle">
     <nav>
         <div class="nav-left">
             <h1>
@@ -50,6 +50,11 @@
             <a href="#" class="button-empty">Se connecter</a>
             <a href="#" class="button-fill">S’inscrire</a>
         </div>
+        <label class="navbar-toggler" for="toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
     </nav>
 </header>
 <section class="section-one">
@@ -257,7 +262,9 @@
     <p class="legend">Nous vous enverrons un e-mail une fois par semaine. Pas de spam.</p>
 
     <form>
-        <input required placeholder="Entrez votre e-mail">
+        <div class="input-container">
+            <i class="far fa-envelope"></i>            <input required placeholder="Entrez votre e-mail">
+        </div>
 
         <button class="button-fill">S'inscrire</button>
     </form>
@@ -274,7 +281,7 @@
                 <p>Suivez, partagez et découvrez vos livres préférés avec Takji.</p>
                 <div class="footer--list">
                     <ul>
-                        <li><a class="button-empty" href="#">Mentions légales</a></li>
+                        <li><a class="button-empty" href="./mentions.html">Mentions légales</a></li>
                         <li><a class="button-empty" href="#">Librairies</a></li>
                         <li><a class="button-empty" href="#">Forum</a></li>
                         <li><a class="button-empty" href="#">Tarifs</a></li>
