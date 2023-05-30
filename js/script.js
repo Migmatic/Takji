@@ -5,23 +5,40 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplay: {
             delay: 30000,
         },
-        effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 'auto',
+        slidesPerView: 1,
+        pagination: {
+            type: 'none',
+        },
+        effect: 'slide',
         coverflowEffect: {
             rotate: 0,
-            stretch: 200,
-            depth: 50,
+            stretch: 355,
+            depth: -100,
             modifier: 1,
             scale: 0.85,
             slideShadows: false,
         },
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: 'true',
-        },
+        breakpoints: {
+            900: {
+                slidesPerView: 'auto',
+                effect: 'coverflow',
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: 'true',
+                },
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 355,
+                    depth: -100,
+                    modifier: 1,
+                    scale: 0.85,
+                    slideShadows: false,
+                },
+            },
+        }
 
     })
 

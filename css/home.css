@@ -258,7 +258,11 @@ nav .nav-right {
   display: flex;
   gap: 8px;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+  nav .nav-right {
+    display: none;
+  }
+
   nav .nav-left .menu {
     display: flex;
     flex-direction: column;
@@ -270,31 +274,39 @@ nav .nav-right {
     transform: translateY(-150%);
     z-index: -1;
     transition: 0.6s;
+    align-items: center;
+    border-bottom: solid 2px #EAECF0;
+    gap: 0;
   }
+
+  nav .nav-left .menu li .button-empty, nav .nav-left .menu li .button-mid{
+    padding: 13px 17px;
+    border-radius: 0;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  nav .nav-left .menu li .button-empty::after, nav .nav-left .menu li .button-mid::after{
+    border-radius: 0;
+  }
+
   nav .navbar-toggler {
     display: grid !important;
     position:relative;
+    cursor: pointer;
 
   }
   nav .navbar-toggler .bar {
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
+    width: 24px;
+    height: 3px;
+    margin-bottom: 5px;
     background: #475467;
-    border-radius: 10%;
+    border-radius: 10px;
     transition: 0.4s;
-  }
-
-  input {
-    display: none;
   }
 
   input:checked ~ nav .nav-left .menu {
     transform: translateY(0);
-  }
-
-  input:checked ~ nav .navbar-toggler {
-    margin-top: 35px;
   }
 
   input:checked ~ nav .navbar-toggler .bar:nth-child(1) {
@@ -309,6 +321,15 @@ nav .nav-right {
   input:checked ~ nav .navbar-toggler .bar:nth-child(3) {
     transform: rotate(-45deg);
   }
+  nav .nav-left .menu li {
+    border-bottom: solid 1px #EAECF0;
+  }
+
+
+}
+
+#toggle {
+  display: none;
 }
 
 
@@ -586,6 +607,7 @@ nav .nav-right {
   gap: 28px 32px;
   list-style: none;
   width: calc(300px + 60%);
+  padding: 0;
 }
 
 .wrapper-library .single-library {
