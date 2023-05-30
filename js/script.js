@@ -11,14 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
         pagination: {
             type: 'none',
         },
-        effect: 'slide',
+        effect: 'coverflow',
         coverflowEffect: {
             rotate: 0,
-            stretch: 355,
+            stretch: 0,
             depth: -100,
             modifier: 1,
             scale: 0.85,
             slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: 'true',
         },
         breakpoints: {
             900: {
@@ -31,10 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 coverflowEffect: {
                     rotate: 0,
-                    stretch: 355,
-                    depth: -100,
+                    stretch: 0,
+                    depth: 300,
                     modifier: 1,
-                    scale: 0.85,
+                    initialSlide: 2,
+
                     slideShadows: false,
                 },
             },

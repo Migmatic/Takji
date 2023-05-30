@@ -258,43 +258,49 @@ nav .nav-right {
   display: flex;
   gap: 8px;
 }
+#mobile-login{
+  display: none;
+}
 @media (max-width: 900px) {
   nav .nav-right {
     display: none;
   }
-
+  #mobile-login{
+    display: block;
+  }
   nav .nav-left .menu {
     display: flex;
     flex-direction: column;
     position: absolute;
     background-color: #ffffff;
     width: 100%;
-    top:60px;
-    right:0;
+    top: 60px;
+    right: 0;
     transform: translateY(-150%);
     z-index: -1;
     transition: 0.6s;
     align-items: center;
-    border-bottom: solid 2px #EAECF0;
+    border-bottom: solid 2px #eaecf0;
     gap: 0;
   }
 
-  nav .nav-left .menu li .button-empty, nav .nav-left .menu li .button-mid{
+  nav .nav-left .menu li .button-empty,
+  nav .nav-left .menu li .button-mid {
     padding: 13px 17px;
     border-radius: 0;
     width: 100vw;
     justify-content: center;
   }
 
-  nav .nav-left .menu li .button-empty::after, nav .nav-left .menu li .button-mid::after{
+  nav .nav-left .menu li .button-empty::after,
+  nav .nav-left .menu li .button-mid::after {
     border-radius: 0;
   }
 
   nav .navbar-toggler {
     display: grid !important;
-    position:relative;
+    position: relative;
     cursor: pointer;
-
   }
   nav .navbar-toggler .bar {
     width: 24px;
@@ -322,17 +328,13 @@ nav .nav-right {
     transform: rotate(-45deg);
   }
   nav .nav-left .menu li {
-    border-bottom: solid 1px #EAECF0;
+    border-bottom: solid 1px #eaecf0;
   }
-
-
 }
 
 #toggle {
   display: none;
 }
-
-
 
 /**************** SECTION ONE ****************/
 .section-one {
@@ -400,10 +402,10 @@ nav .nav-right {
 }
 
 .swiper-slide img {
-  object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 25px;
+  object-fit: cover;
   box-shadow: 0 32px 64px -12px #10182824;
 }
 
